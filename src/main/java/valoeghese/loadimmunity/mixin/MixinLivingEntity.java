@@ -8,7 +8,6 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import valoeghese.loadimmunity.LoadImmunity;
 
@@ -23,15 +22,6 @@ public abstract class MixinLivingEntity extends Entity {
 		if ((Object)this instanceof ServerPlayerEntity) {
 			if (LoadImmunity.isImmune(this.uuid)) {
 				info.setReturnValue(false);
-			}
-		}
-	}
-
-	@Inject(at = @At("HEAD"), method = "push", cancellable = true)
-	private void onPush(CallbackInfo info) {
-		if ((Object)this instanceof ServerPlayerEntity) {
-			if (LoadImmunity.isImmune(this.uuid)) {
-				info.cancel();
 			}
 		}
 	}

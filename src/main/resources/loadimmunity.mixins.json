@@ -4,7 +4,6 @@
   "package": "valoeghese.loadimmunity.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinEntity",
     "MixinLivingEntity"
   ],
   "injectors": {
