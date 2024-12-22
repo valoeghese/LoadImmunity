@@ -50,7 +50,7 @@ public class LoadImmunity
 
 	@SubscribeEvent
 	public void onPlayerLogout(PlayerEvent.PlayerLoggedOutEvent event) {
-		LOGGER.debug("Plauer logged out: {}", event.getPlayer());
+		LOGGER.debug("Player logged out: {}", event.getPlayer());
 		removeImmune(event.getPlayer());
 	}
 
